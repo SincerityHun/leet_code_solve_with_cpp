@@ -65,11 +65,13 @@ public:
 
         for (int i = 1; i < nums.size(); ++i)
         {
-            max_current = max(nums[i], max_current + nums[i]);
+            max_current += nums[i];
             if (max_current > max_global)
             {
                 max_global = max_current;
             }
+            if(max_current < nums[i])
+                max_current = nums[i];
         }
 
         return max_global;
